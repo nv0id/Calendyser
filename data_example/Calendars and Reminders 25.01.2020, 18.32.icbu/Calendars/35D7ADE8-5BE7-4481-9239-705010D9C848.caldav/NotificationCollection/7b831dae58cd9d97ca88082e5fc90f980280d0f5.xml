@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<notification xmlns="http://calendarserver.org/ns/" xmlns:ns2="DAV:">
+    <dtstamp>20191101T124057Z</dtstamp>
+    <resource-changed>
+        <created>
+            <changed-by>
+                <dtstamp>20191101T124057Z</dtstamp>
+                <email-address>julesmoosa@hotmail.com</email-address>
+                <first-name>Juliet</first-name>
+                <ns2:href>mailto:julesmoosa@hotmail.com</ns2:href>
+                <last-name>Moorhead</last-name>
+            </changed-by>
+            <ns2:href>/1527326467/calendars/e940dd86d085681001a7c89c902721619c546b9a68885c373d0946b8063d974f/0CB5DA8B-4DBE-4B6A-A8F0-A34CE8392786.ics</ns2:href>
+        </created>
+    </resource-changed>
+</notification>

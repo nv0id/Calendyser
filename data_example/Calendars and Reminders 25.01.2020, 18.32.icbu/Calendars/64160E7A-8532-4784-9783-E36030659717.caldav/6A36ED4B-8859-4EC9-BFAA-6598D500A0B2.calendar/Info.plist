@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AlarmsDisabled</key>
+	<false/>
+	<key>Availability</key>
+	<false/>
+	<key>CalendarPath</key>
+	<string>/remote.php/dav/calendars/admin/8FE23B94-DFA2-4761-8FC2-9B6B63202D4A/</string>
+	<key>CanBePublished</key>
+	<true/>
+	<key>Checked</key>
+	<integer>1</integer>
+	<key>Color</key>
+	<string>#0E61B9FF</string>
+	<key>ColorEditable</key>
+	<true/>
+	<key>Delegate</key>
+	<false/>
+	<key>Editable</key>
+	<true/>
+	<key>Enabled</key>
+	<true/>
+	<key>EventContainer</key>
+	<true/>
+	<key>Key</key>
+	<string>6A36ED4B-8859-4EC9-BFAA-6598D500A0B2</string>
+	<key>Order</key>
+	<integer>9</integer>
+	<key>OwnerPrincipalPath</key>
+	<string>/remote.php/dav/principals/users/admin/</string>
+	<key>Permission</key>
+	<integer>4</integer>
+	<key>Renameable</key>
+	<true/>
+	<key>ShareDefaultAlarmSettings</key>
+	<true/>
+	<key>TaskContainer</key>
+	<false/>
+	<key>TimeZone</key>
+	<string>Europe/London</string>
+	<key>Title</key>
+	<string>Time</string>
+	<key>Type</key>
+	<string>CalDAV</string>
+</dict>
+</plist>

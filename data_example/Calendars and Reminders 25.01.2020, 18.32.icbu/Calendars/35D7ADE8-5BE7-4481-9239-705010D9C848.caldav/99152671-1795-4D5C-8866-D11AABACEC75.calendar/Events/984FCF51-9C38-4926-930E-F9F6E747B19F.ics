@@ -1,0 +1,64 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.15//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:Oxford Lectures with Mr Genton
+X-APPLE-EWS-BUSYSTATUS:BUSY
+TRANSP:OPAQUE
+X-APPLE-SERVERFILENAME:984FCF51-9C38-4926-930E-F9F6E747B19F.ics
+UID:984FCF51-9C38-4926-930E-F9F6E747B19F
+X-APPLE-TRAVEL-START;ROUTING=CAR;VALUE=URI;X-ADDRESS=8 Hillside\\n Wimbl
+ edon London SW19 4NH United Kingdom;X-TITLE=Home:-0.219646
+DTSTART;TZID=Europe/London:20170506T100000
+SEQUENCE:0
+X-APPLE-TRAVEL-DURATION;VALUE=DURATION:PT1H20M
+ngland:geo:51.759998,-1.256313
+LOCATION:Clarendon Laboratories\nParks Road\, Oxford\, OX2\, England
+X-APPLE-ETAG:"C=4044@U=56675e9b-0bc0-4741-93e4-24a65a870a31"
+DTSTAMP:20170506T073500Z
+LAST-MODIFIED:20170329T160236Z
+X-APPLE-SCHEDULETAG:
+CREATED:20170322T150403Z
+URL;VALUE=URI:https://saturdaytheory.physics.ox.ac.uk/
+DTEND;TZID=Europe/London:20170506T150000
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+DESCRIPTION:As if I had planned it\, I have just received the official i
+ nvitation. As mentioned this morning\, we should aim to meet at 10 am at
+  the entrance to the Clarendon Laboratory. I recommend that you google t
+ he lecturers – my initial comments are as follows –\n \nProfessor James 
+ Binney is a bit of a legend in Oxford. He tried to teach me mathematics 
+ when I was at Magdalen many years ago. He will explain the contrast betw
+ een the Newtonian view and the Einsteinian view that we touched on this 
+ morning – probably hard in places.\n \nProfessor Subir Sarkar is a very 
+ gifted lecturer. He will guide us through the principles of interferomet
+ ry\, from the original Michelson-Morley experiment to the extraordinaril
+ y evolved LIGO and VIRGO. There may well be some nasty mathematics at th
+ e end.\n \nThe third lecture\, by Professor John March-Russell\, is like
+ ly to be the most difficult and controversial\, as string theory is invo
+ lved. If you are struggling towards the end\, then please remember that 
+ you are not a string quintet and refreshments are only a few minutes awa
+ y!\n \nJAG\n\n
+BEGIN:VALARM
+X-WR-ALARMUID:E33BB47C-C3B4-4783-8A37-D15BA87261C6
+UID:E33BB47C-C3B4-4783-8A37-D15BA87261C6
+TRIGGER;X-APPLE-RELATED-TRAVEL=-PT10M:-PT1H30M
+ATTACH;VALUE=URI:Chord
+X-APPLE-TRAVEL-DEFAULT-ALARM:TRUE
+ACTION:AUDIO
+ACKNOWLEDGED:20170506T073001Z
+END:VALARM
+BEGIN:VALARM
+X-WR-ALARMUID:8F064A55-53F1-4A68-AC52-DC6927195AD2
+UID:8F064A55-53F1-4A68-AC52-DC6927195AD2
+DESCRIPTION:Event reminder
+ACKNOWLEDGED:20170506T073001Z
+TRIGGER;X-APPLE-RELATED-TRAVEL=-PT10M:-PT1H30M
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER;VALUE=DATE-TIME:19760401T005545Z
+ACTION:NONE
+END:VALARM
+END:VEVENT
+END:VCALENDAR

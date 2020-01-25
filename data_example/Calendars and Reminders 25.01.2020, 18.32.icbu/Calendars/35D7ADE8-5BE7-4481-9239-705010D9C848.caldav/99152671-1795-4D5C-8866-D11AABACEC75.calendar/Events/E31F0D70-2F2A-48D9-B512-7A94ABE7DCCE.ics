@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.15//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=Europe/London:20170624T120000
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+UID:E31F0D70-2F2A-48D9-B512-7A94ABE7DCCE
+DTSTAMP:20170624T075637Z
+LOCATION:SN6 8NZ\nSwindon\, England
+DESCRIPTION:http://www.ridgewayrevenge.co.uk/\nPARKING AND FACILITIES\nT
+ he event car park and the Run HQ are in the signed field car park adjace
+ nt to the start/ finish. Situated approximately ½ a mile straight on fro
+ m Ridgeway Farm (where Nell Hill crosses the Ridgeway)\, the car park\, 
+ Run HQ and start/ finish will be clearly signed with our Ridgeway Reveng
+ e logo/ car park signs from entering Bishopstone Village. Please follow 
+ these Ridgeway Revenge signs. The nearest postcode is: SN6 8NZ. This wil
+ l take you up Nell Hill to a well-used farm track (Ridgeway Farm buildin
+ gs on your right). Go straight on\, crossing the Ridgeway and follow the
+  Ridgeway Revenge carpark signs for approximately a ½ mile to take the s
+ igned left into the event car park field. \n\nBefore the start of the ra
+ ce\, all runners are required to attend the race briefing at the event H
+ Q. This will be held at approximately 9.40 AM\n\nStart 10.00 AM\n\nArriv
+ e for registration by 9.15.\n\nTAXI - Adlebourne Cars - 07977059991
+URL;VALUE=URI:message:%3C1634813063.529982.bcb52827-75b7-4112-b6c4-b0b30
+ 7344eda.open-xchange@webmail.123-reg.co.uk%3E
+X-APPLE-SCHEDULETAG:
+X-APPLE-SERVERFILENAME:E31F0D70-2F2A-48D9-B512-7A94ABE7DCCE.ics
+SEQUENCE:0
+X-APPLE-TRAVEL-START;VALUE=URI;X-ADDRESS=8 Hillside\\n Wimbledon London 
+ SW19 4NH United Kingdom;X-TITLE=Home:-0.219646
+X-APPLE-EWS-BUSYSTATUS:BUSY
+X-APPLE-TRAVEL-DURATION;VALUE=DURATION:PT40M
+SUMMARY:Ridgeway revenge Half Marathon Day - Taxi Booked - Teachers emai
+ led.
+LAST-MODIFIED:20170611T134921Z
+DTSTART;TZID=Europe/London:20170624T091500
+CREATED:20170302T205257Z
+X-APPLE-ETAG:"C=4522@U=56675e9b-0bc0-4741-93e4-24a65a870a31"
+BEGIN:VALARM
+X-WR-ALARMUID:B6AAABE2-52F7-4F42-BCCC-CA9A9DAC0E5D
+UID:B6AAABE2-52F7-4F42-BCCC-CA9A9DAC0E5D
+TRIGGER;VALUE=DATE-TIME:19760401T005545Z
+ACTION:NONE
+END:VALARM
+BEGIN:VALARM
+X-WR-ALARMUID:4BE72FE2-8F06-4F00-809F-1FDC69E8BF91
+UID:4BE72FE2-8F06-4F00-809F-1FDC69E8BF91
+TRIGGER:-PT50M
+DESCRIPTION:Event reminder
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

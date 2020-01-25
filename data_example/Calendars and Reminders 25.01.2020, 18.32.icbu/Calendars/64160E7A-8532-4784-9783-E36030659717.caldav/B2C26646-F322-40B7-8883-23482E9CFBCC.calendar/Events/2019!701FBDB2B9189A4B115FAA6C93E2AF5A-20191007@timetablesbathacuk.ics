@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.15//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=Europe/London:20191007T131500
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+UID:2019!701FBDB2B9189A4B115FAA6C93E2AF5A-20191007@timetables.bath.ac.uk
+DTSTAMP:20191001T090030Z
+LOCATION:4E 2.61 / 4E 3.36 / 4E 3.40 / 4E 3.44 / 4E 3.5
+DESCRIPTION:Location(s):\n4E 2.61: http://www.bath.ac.uk/timetable/roomi
+ nfo/4E2-61.htm\n4E 3.36: http://www.bath.ac.uk/timetable/roominfo/4E3-36
+ .htm\n4E 3.40: http://www.bath.ac.uk/timetable/roominfo/#SPLUS3C7050.htm
+ \n4E 3.44: http://www.bath.ac.uk/timetable/roominfo/#SPLUS3C704F.htm\n4E
+  3.5: http://www.bath.ac.uk/timetable/roominfo/4E3-5.htm\n\nStaff member
+ (s): Avent\, Mr A\, Dekoninck\, Dr E\, Dhokia\, Dr V\, Gopsill\, Dr J\, 
+ Miles\, Prof A W\, Newman\, Prof ST\, Owen\, Dr GW\, Scobie\, Dr J\, Val
+ entine\, Mr R\n\n1-11\, 15\n\nLast synchronised on 2019-10-01 at 10:00 B
+ ST
+STATUS:CONFIRMED
+X-APPLE-SCHEDULETAG:
+X-APPLE-SERVERFILENAME:2019%21701FBDB2B9189A4B115FAA6C93E2AF5A-20191007%
+ 40timetablesbathacuk.ics
+SEQUENCE:0
+X-APPLE-EWS-BUSYSTATUS:BUSY
+SUMMARY:ME10006-ME STU
+LAST-MODIFIED:20191001T090030Z
+DTSTART;TZID=Europe/London:20191007T111500
+CREATED:20191001T090030Z
+X-APPLE-ETAG:"b60d6a9ee21b83ee6e3b965c98a37c1f"
+END:VEVENT
+END:VCALENDAR

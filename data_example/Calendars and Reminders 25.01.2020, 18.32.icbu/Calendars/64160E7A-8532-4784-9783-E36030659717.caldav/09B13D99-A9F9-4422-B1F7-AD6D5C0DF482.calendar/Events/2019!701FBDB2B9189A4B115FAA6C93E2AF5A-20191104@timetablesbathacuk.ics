@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.15//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=Europe/London:20191104T131500
+UID:2019!701FBDB2B9189A4B115FAA6C93E2AF5A-20191104@timetables.bath.ac.uk
+DTSTAMP:20200125T175238Z
+LOCATION:4E 2.61 / 4E 3.36 / 4E 3.40 / 4E 3.44 / 4E 3.5
+DESCRIPTION:Location(s):\n4E 2.61: http://www.bath.ac.uk/timetable/roomi
+ nfo/4E2-61.htm\n4E 3.36: http://www.bath.ac.uk/timetable/roominfo/4E3-36
+ .htm\n4E 3.40: http://www.bath.ac.uk/timetable/roominfo/#SPLUS3C7050.htm
+ \n4E 3.44: http://www.bath.ac.uk/timetable/roominfo/#SPLUS3C704F.htm\n4E
+  3.5: http://www.bath.ac.uk/timetable/roominfo/4E3-5.htm\n\nStaff member
+ (s): Avent\, Mr A\, Dekoninck\, Dr E\, Dhokia\, Dr V\, Gopsill\, Dr J\, 
+ Miles\, Prof A W\, Newman\, Prof ST\, Owen\, Dr GW\, Scobie\, Dr J\, Val
+ entine\, Mr R\n\n1-11\, 15\n\nLast synchronised on 2020-01-25 at 17:52 G
+ MT
+STATUS:CONFIRMED
+SEQUENCE:0
+X-APPLE-EWS-BUSYSTATUS:BUSY
+SUMMARY:ME10006-ME STU
+LAST-MODIFIED:20200125T175238Z
+DTSTART;TZID=Europe/London:20191104T111500
+CREATED:20200125T175238Z
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+X-WR-ALARMUID:96BC6EAA-81D8-4C79-93F0-A71EEF9421AA
+UID:96BC6EAA-81D8-4C79-93F0-A71EEF9421AA
+TRIGGER:PT0S
+X-APPLE-DEFAULT-ALARM:TRUE
+ATTACH;VALUE=URI:Chord
+ACTION:AUDIO
+END:VALARM
+END:VEVENT
+END:VCALENDAR
