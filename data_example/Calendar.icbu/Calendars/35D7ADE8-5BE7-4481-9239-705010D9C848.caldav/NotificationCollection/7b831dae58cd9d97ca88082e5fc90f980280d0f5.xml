@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<notification xmlns="http://calendarserver.org/ns/" xmlns:ns2="DAV:">
+    <dtstamp>20191101T124057Z</dtstamp>
+    <resource-changed>
+        <created>
+            <changed-by>
+                <dtstamp>20191101T124057Z</dtstamp>
+                <email-address>email@example.com</email-address>
+                <first-name>FirstNameExample</first-name>
+                <ns2:href>mailto:email@example.com</ns2:href>
+                <last-name>LastNameExample</last-name>
+            </changed-by>
+            <ns2:href>UUID</ns2:href>
+        </created>
+    </resource-changed>
+</notification>
