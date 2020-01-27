@@ -1,26 +1,40 @@
 
 def main():
 
-    from datetime import datetime, date
-    import icalendar # $pip install icalendar
-    import pandas as pd
+    # import icalendar # $pip install icalendar
 
+    import dateutil.parser   # For dealing with the YYYYMMDDTHHMMSS datetime format
+
+    ## Turns the datetime from ics file into something useable.
+    def to_date(datestring):
+        return dateutil.parser.parse(datestring)
+
+    ## Class definition for events
 
     class event:
-        def __init__(self,e_name,e_location,e_begin,e_end):
-            self.ename = e_name
-            self.elocation = e_location
-            self.ebegin = e_begin
-            self.eend = e_end
+        def __init__(self,path):
 
-        def duration(self):
-            return (e_begin - e_end)
+            with open(path,'r') as f: # Search through .ics file and find metatata
+                for line in f: # Searches line by line to save memory
+                    if 'DTEND' in line:
+                        self.eend = line[17:]
+                    elif 'SUMMARY' in line:
+                        self.ename = line[8:]
+                    elif 'LOCATION' in line:
+                        self.elocation = line[9:]
+                    elif 'DTSTART' in line:
+                        self.ebegin = line[19:]
+                    elif 'X-APPLE-SERVERFILENAME'in line:
+                        self.filename = line[24:]
 
-    a = pd.to_datetime('20161225T120000')
-    b = pd.to_datetime('20161225T150000')
-    event("MyEvent","Somewhere",a,b)
+            self.duration = (to_date(self.eend) - to_date(self.ebegin))
 
-    print(event.duration(self))
+
+
+    event1 = event('/Users/nvoidmac/Documents/GitHub/Calendyser/Python/testevent.ics')
+
+    print(event1.duration)
+    print(event1.filename)
 
 
 
