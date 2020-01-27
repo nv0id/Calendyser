@@ -1,16 +1,15 @@
-
+#!/usr/local/bin/python3
 def main():
 
     # import icalendar # $pip install icalendar
 
     import dateutil.parser   # For dealing with the YYYYMMDDTHHMMSS datetime format
 
-    ## Turns the datetime from ics file into something useable.
+    ## Turns the datetime from ics file into something useable. ##
     def to_date(datestring):
         return dateutil.parser.parse(datestring)
 
-    ## Class definition for events
-
+    ## Class definition for events. ##
     class event:
         def __init__(self,path):
 

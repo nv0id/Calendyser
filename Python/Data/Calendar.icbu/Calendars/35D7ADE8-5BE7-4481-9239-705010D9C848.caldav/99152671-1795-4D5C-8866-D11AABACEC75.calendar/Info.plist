@@ -7,15 +7,15 @@
 	<key>Availability</key>
 	<false/>
 	<key>CTag</key>
-	<string>FT=-@RU=56675e9b-0bc0-4741-93e4-24a65a870a31@S=14986</string>
+	<string>http://sabre.io/ns/sync/23</string>
 	<key>CalendarPath</key>
-	<string>/1527326467/calendars/40e88a87376b4115ca45523829848cf5e5104bf1be159b87bdaa7d894155f4c3/</string>
+	<string>/remote.php/dav/calendars/admin/8FE23B94-DFA2-4761-8FC2-9B6B63202D4A/</string>
 	<key>CanBePublished</key>
-	<false/>
+	<true/>
 	<key>Checked</key>
 	<integer>1</integer>
 	<key>Color</key>
-	<string>#44A703FF</string>
+	<string>#0E61B9FF</string>
 	<key>ColorEditable</key>
 	<true/>
 	<key>Delegate</key>
@@ -27,50 +27,13 @@
 	<key>EventContainer</key>
 	<true/>
 	<key>Key</key>
-	<string>99152671-1795-4D5C-8866-D11AABACEC75</string>
+	<string>6A36ED4B-8859-4EC9-BFAA-6598D500A0B2</string>
 	<key>Order</key>
-	<integer>8</integer>
-	<key>OwnerDisplayName</key>
-	<string>Juliet Moorhead</string>
+	<integer>9</integer>
 	<key>OwnerPrincipalPath</key>
-	<string>/132408229/principal/</string>
+	<string>/remote.php/dav/principals/users/admin/</string>
 	<key>Permission</key>
 	<integer>4</integer>
-	<key>PreferredOwnerAddresses</key>
-	<array>
-		<dict>
-			<key>PreferredOwnerAddressesAddress</key>
-			<string>/aMTMyNDA4MjI5MTMyNDA4Mm1BlBuZs-7W-3dKcWa-QofzPMljmCfOX6OEPTx7Mb7-/principal/</string>
-			<key>PreferredOwnerAddressesPreferred</key>
-			<integer>-1</integer>
-		</dict>
-		<dict>
-			<key>PreferredOwnerAddressesAddress</key>
-			<string>urn:uuid:132408229</string>
-			<key>PreferredOwnerAddressesPreferred</key>
-			<integer>-1</integer>
-		</dict>
-		<dict>
-			<key>PreferredOwnerAddressesAddress</key>
-			<string>mailto:email@example.com</string>
-			<key>PreferredOwnerAddressesPreferred</key>
-			<integer>-1</integer>
-		</dict>
-		<dict>
-			<key>PreferredOwnerAddressesAddress</key>
-			<string>mailto:email@example.com</string>
-			<key>PreferredOwnerAddressesPreferred</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>PreferredOwnerAddressesAddress</key>
-			<string>/132408229/principal</string>
-			<key>PreferredOwnerAddressesPreferred</key>
-			<integer>-1</integer>
-		</dict>
-	</array>
-	<key>PushKey</key>
-	<string>1527326467</string>
 	<key>Renameable</key>
 	<true/>
 	<key>ShareDefaultAlarmSettings</key>
@@ -80,7 +43,7 @@
 	<key>TimeZone</key>
 	<string>Europe/London</string>
 	<key>Title</key>
-	<string>CalendarTitle</string>
+	<string>TitleofCalendar-2</string>
 	<key>Type</key>
 	<string>CalDAV</string>
 </dict>

@@ -4,29 +4,47 @@
 <dict>
 	<key>AlarmsDisabled</key>
 	<false/>
+	<key>Availability</key>
+	<false/>
+	<key>CTag</key>
+	<string>http://sabre.io/ns/sync/23</string>
+	<key>CalendarPath</key>
+	<string>/remote.php/dav/calendars/admin/8FE23B94-DFA2-4761-8FC2-9B6B63202D4A/</string>
+	<key>CanBePublished</key>
+	<true/>
 	<key>Checked</key>
 	<integer>1</integer>
 	<key>Color</key>
-	<string>#E6C800FF</string>
+	<string>#0E61B9FF</string>
+	<key>ColorEditable</key>
+	<true/>
+	<key>Delegate</key>
+	<false/>
+	<key>Editable</key>
+	<true/>
 	<key>Enabled</key>
 	<true/>
 	<key>EventContainer</key>
 	<true/>
-	<key>IsNaturalLanguageSuggestedEventCalendar</key>
-	<true/>
-	<key>IsSuggestedEventCalendar</key>
-	<false/>
 	<key>Key</key>
-	<string>3AC7322D-6AB9-4B4A-910B-FE636125149C</string>
+	<string>6A36ED4B-8859-4EC9-BFAA-6598D500A0B2</string>
 	<key>Order</key>
-	<integer>0</integer>
+	<integer>9</integer>
+	<key>OwnerPrincipalPath</key>
+	<string>/remote.php/dav/principals/users/admin/</string>
+	<key>Permission</key>
+	<integer>4</integer>
+	<key>Renameable</key>
+	<true/>
 	<key>ShareDefaultAlarmSettings</key>
-	<false/>
+	<true/>
 	<key>TaskContainer</key>
 	<false/>
+	<key>TimeZone</key>
+	<string>Europe/London</string>
 	<key>Title</key>
-	<string>Found in Natural Language</string>
+	<string>TitleofCalendar-1</string>
 	<key>Type</key>
-	<string>Local</string>
+	<string>CalDAV</string>
 </dict>
 </plist>
