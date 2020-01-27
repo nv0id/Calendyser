@@ -1,6 +1,8 @@
 # Notes for Calendyser
 
-### 26.01.2020 - Python ics.py library
+## 26.01.2020
+---
+### 1. Python ics.py library
 
 Found this library by C4ptainCrunch. Could be useful at some point. It helps parse and write to ics data rather than us having to write it ourselves.
 
@@ -32,5 +34,15 @@ with open('my.ics', 'w') as my_file:
 https://pypi.org/project/ics/
 
 http://github.com/C4ptainCrunch/ics.py
+
+Note by Freddie - Updated 26.01.2020
+
+---
+
+### 2. Python Class Variable Tutorial
+
+Basing instances of classes off of this tutorial on youtube:
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/BJ-VvGyQxho/0.jpg)](http://www.youtube.com/watch?v=BJ-VvGyQxho "Python OOP Tutorial 2: Class Variables")
 
 Note by Freddie - Updated 26.01.2020
