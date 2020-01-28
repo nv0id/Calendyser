@@ -13,8 +13,7 @@ from math import pi
 import datetime as dt
 import sqlite3
 
-conn = sqlite3.connect('/Users/nvoidmac/Desktop/events.db')
-c = conn.cursor()
+
 
 def plotter():
     output_file('pie.html')
@@ -25,11 +24,16 @@ def getdata():
 
 
 
-conn.close()
+
 
 def main():
     pass
 
 
 if __name__ == "__main__":
-  main()
+  conn = sqlite3.connect('/Users/nvoidmac/Desktop/events.db')
+  c = conn.cursor()
+
+
+
+  conn.close()

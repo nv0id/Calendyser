@@ -31,8 +31,8 @@ def sqlise(icbuIn,dbOut):
                 TFinish timestamp,
                 Duration text)""") # Create a table for each Calendar found
     for calname,path in calendar.calnames.items():
-        calname = calfinder.sql_clean(calname)
         for eventpath in calfinder.file_ext_search(path,".ics"): # Searches for .ics files in that .calendar folder
+
             event = calfinder.event(eventpath) # Creates an instance of event.
             c.execute("INSERT INTO allevents VALUES (?, ?, ?, ?, ?, ?, ?)", (calname, event.ename, event.elocation,event.allday,event.ebegin,event.eend,str(event.duration)))
 
@@ -41,6 +41,8 @@ def sqlise(icbuIn,dbOut):
     conn.close()
 
 # sqlise('/Users/nvoidmac/Desktop/data.icbu','/Users/nvoidmac/Desktop/events.db')
+sqlise('C:\\Users\\gbowr\\Desktop\\data_example','events.db')
+
 
 def main():
     pass

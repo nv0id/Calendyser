@@ -6,7 +6,6 @@
 import glob
 import os
 import datetime
-import pandas as pd
 
 ## ---------- Defining functions here ---------- ##
 
@@ -22,21 +21,6 @@ def to_date(datestring):
     elif 'T' not in datestring:
         return datetime.datetime.strptime(datestring,'%Y%m%d')
     else: datestring = "Null"
-
-def sql_clean(string):
-    '''
-    - Takes any variable as input
-    - Turns varable into string and makes it SQL-safe
-    - Returns cleansed 'string'
-    '''
-    string = str(string)
-    string = string.replace("\\n","_")
-    b = "!@:%^<>./*\\()#-;±§£'|][{}+=~`\""
-    string = string.replace(" ","_")
-    string = string.replace("-","_")
-    string = string.replace(",","_")
-    for char in b: string=string.replace(char,"")
-    return "\'"+string+"\'"
 
 ## ---------- Making Classes here ---------- ##
 
@@ -65,19 +49,19 @@ class event:
 
         self.eend=self.ename=self.elocation=self.ebegin=self.filename="Null"
 
-        with open(path,'r') as f: # Search through .ics file and find metatata
+        with open(path,'r', encoding="utf8") as f: # Search through .ics file and find metatata
             for line in f: # Searches line by line to save memory
                 if 'DTEND' in line:
                     self.eend = to_date(line.split(':',1)[1].rstrip())
                 elif 'SUMMARY' in line:
-                    self.ename = sql_clean(line[7:].rstrip())
+                    self.ename = line[7:].rstrip()
                 elif 'LOCATION' in line:
-                    self.elocation = sql_clean(line[9:].rstrip())
+                    self.elocation = line[9:].rstrip()
                 elif 'DTSTART' in line:
                     self.ebegin = to_date(line.split(':',1)[1].rstrip())
                 ## Uncomment if you want file ID as well. ##
                 #elif 'X-APPLE-SERVERFILENAME'in line:
-                    #self.filename = sql_clean(line[24:])
+                    #self.filename = line[24:])
 
         if self.eend == "Null":
             self.duration = "Null"
