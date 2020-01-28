@@ -5,26 +5,26 @@
 import sqlite3
 import calfinder
 
-def sqlise(path):
+def sqlise(icbuIn,dbOut):
     '''
     Function takes the path to a Calendar.icbu file,
     finds every every event and puts it into a database.
     '''
-    calendar = calfinder.calfinder(path)
+    calendar = calfinder.calfinder(icbuIn)
 
-    conn = sqlite3.connect('events.db') # Locates events.db database in same directory, otherwise makes one.
+    conn = sqlite3.connect(dbOut)
     c = conn.cursor()
 
     query_counter = 0
 
+     # Cleaniing up the name to prevent SQL injection.
+    c.execute("CREATE TABLE allevents (Calendar text, EventName text, Location text, AllDayEvent integer, TStart text, TFinish text, Duration text)") # Create a table for each Calendar found
+    query_counter += 1
     for calname,path in calendar.calnames.items():
-        calname = calfinder.sql_clean(calname) # Cleaniing up the name to prevent SQL injection.
-        c.execute("CREATE TABLE "+calname+" (fileid text, name text, location text, start text, finish text,duration text)") # Create a table for each Calendar found
-        query_counter += 1
-
+        calname = calfinder.sql_clean(calname)
         for eventpath in calfinder.file_ext_search(path,".ics"): # Searches for .ics files in that .calendar folder
             event = calfinder.event(eventpath) # Creates an instance of event.
-            sql_cmd = "INSERT INTO "+calname+" VALUES (%s, %s, %s, %s, %s, %s)" %(event.filename, event.ename, event.elocation, event.ebegin, event.eend, event.duration)
+            sql_cmd = "INSERT INTO allevents VALUES (%s, %s, %s, %s, %s, %s, %s)" %(calname, event.ename, event.elocation,event.allday, event.ebegin, event.eend, event.duration)
             query_counter += 1
             c.execute(sql_cmd) # Writes event data to DB
 
@@ -33,6 +33,8 @@ def sqlise(path):
     conn.close()
 
     return ("Made "+str(query_counter)+" queries!")
+
+sqlise('/Users/nvoidmac/Desktop/data.icbu','/Users/nvoidmac/Desktop/events.db')
 
 def main():
     pass

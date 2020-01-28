@@ -30,7 +30,7 @@ def sql_clean(string):
     - Returns cleansed 'string'
     '''
     string = str(string)
-    b = "!@: %^<>.,/*()#-;±§£'|][{}+=~`\""
+    b = "!@: %^<>.,/*\\()#-;±§£'|][{}+=~`\""
     string = string.replace(" ","_")
     string = string.replace("-","_")
     for char in b: string=string.replace(char,"")
@@ -68,18 +68,24 @@ class event:
                 if 'DTEND' in line:
                     self.eend = sql_clean(line.split(':',1)[1])
                 elif 'SUMMARY' in line:
-                    self.ename = sql_clean(line[8:])
+                    self.ename = sql_clean(line[7:])
                 elif 'LOCATION' in line:
                     self.elocation = sql_clean(line[9:])
                 elif 'DTSTART' in line:
                     self.ebegin = sql_clean(line.split(':',1)[1])
-                elif 'X-APPLE-SERVERFILENAME'in line:
-                    self.filename = sql_clean(line[24:])
+                ## Uncomment if you want file ID as well. ##
+                #elif 'X-APPLE-SERVERFILENAME'in line:
+                    #self.filename = sql_clean(line[24:])
 
         if self.eend == "Null":
             self.duration = ("\'"+"AllDay"+"\'")
         else:
             self.duration = sql_clean(to_date(self.eend) - to_date(self.ebegin))
+
+
+        if len(self.ebegin) < 16: self.allday = 1
+        else: self.allday = 0 # Checks if all day event
+
 
 def main():
     pass
