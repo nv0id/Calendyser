@@ -43,7 +43,7 @@
 	<key>TimeZone</key>
 	<string>Europe/London</string>
 	<key>Title</key>
-	<string>TitleofCalendar-2</string>
+	<string>TitleofCalendar2</string>
 	<key>Type</key>
 	<string>CalDAV</string>
 </dict>

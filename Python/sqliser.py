@@ -7,25 +7,29 @@ import readics
 import calfinder
 
 def main():
-    calendar = calfinder.calfinder('/Users/nvoidmac/Documents/GitHub/Calendyser/Python/Data/Calendar.icbu')
+    calendar = calfinder.calfinder('Data/Calendar.icbu') # For testing - Put path to .icbu here!
 
     conn = sqlite3.connect('/Users/nvoidmac/Documents/GitHub/Calendyser/Python/events.db')
     c = conn.cursor()
 
+    counter = 0
+
     for calname,path in calendar.calnames.items():
-        c.execute("CREATE TABLE "+calname+" (fileid text,name text,location text,start text,finish text)")
+        calname = readics.sql_clean(calname)
+        c.execute("CREATE TABLE "+calname+" (fileid text, name text, location text, start text, finish text,duration text)")
 
-
-        for eventpath in file_ext_search(path,".ics"):
+        for eventpath in calfinder.file_ext_search(path,".ics"):
             event = readics.event(eventpath)
-            c.execute("INSERT INTO "+calname+" VALUES (?, ?, ?, ?, ?)" (calname,event.filename, event.ename, event.elocation, event.ebegin, event.eend))
+            sql_cmd = "INSERT INTO "+calname+" VALUES (%s, %s, %s, %s, %s, %s)" %(event.filename, event.ename, event.elocation, event.ebegin, event.eend, event.duration)
+            counter += 1
+            c.execute(sql_cmd)
 
 
-        conn.commit()
+    conn.commit()
 
-        conn.close()
+    conn.close()
 
-
+    print ("Inserted "+str(counter)+" events into database!")
 
 
 
