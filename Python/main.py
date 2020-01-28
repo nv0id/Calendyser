@@ -1,6 +1,7 @@
+#!/usr/local/bin/python3
 ## Analysis using pandas and bokeh ##
 
-import bokeh
+from bokeh.plotting import figure, output_file, show
 import numpy as np
 import pandas as pd
 

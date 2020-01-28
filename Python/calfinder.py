@@ -5,7 +5,8 @@
 
 import glob
 import os
-import dateutil.parser
+import datetime
+import pandas as pd
 
 ## ---------- Defining functions here ---------- ##
 
@@ -13,15 +14,14 @@ def file_ext_search(path,ext):
     return glob.glob(path + '/**/*%s'%ext, recursive=True)
 
 def to_date(datestring):
-    '''
-    - Takes string as input
-    - Tries to turn varable into datestring
-    - Returns datestime string
-    '''
-    if datestring=="Null":
+    if 'T' in datestring:
+        datestring = datestring[0:14].split('T',1)
+        return datetime.datetime.strptime(datestring[0]+datestring[1],'%Y%m%d%H%M%S')
+    elif datestring=="Null":
         return
-    try: return dateutil.parser.parse(datestring)
-    except: return "Null"
+    elif 'T' not in datestring:
+        return datetime.datetime.strptime(datestring,'%Y%m%d')
+    else: datestring = "Null"
 
 def sql_clean(string):
     '''
@@ -30,9 +30,11 @@ def sql_clean(string):
     - Returns cleansed 'string'
     '''
     string = str(string)
-    b = "!@: %^<>.,/*\\()#-;±§£'|][{}+=~`\""
+    string = string.replace("\\n","_")
+    b = "!@:%^<>./*\\()#-;±§£'|][{}+=~`\""
     string = string.replace(" ","_")
     string = string.replace("-","_")
+    string = string.replace(",","_")
     for char in b: string=string.replace(char,"")
     return "\'"+string+"\'"
 
@@ -66,25 +68,28 @@ class event:
         with open(path,'r') as f: # Search through .ics file and find metatata
             for line in f: # Searches line by line to save memory
                 if 'DTEND' in line:
-                    self.eend = sql_clean(line.split(':',1)[1])
+                    self.eend = to_date(line.split(':',1)[1].rstrip())
                 elif 'SUMMARY' in line:
-                    self.ename = sql_clean(line[7:])
+                    self.ename = sql_clean(line[7:].rstrip())
                 elif 'LOCATION' in line:
-                    self.elocation = sql_clean(line[9:])
+                    self.elocation = sql_clean(line[9:].rstrip())
                 elif 'DTSTART' in line:
-                    self.ebegin = sql_clean(line.split(':',1)[1])
+                    self.ebegin = to_date(line.split(':',1)[1].rstrip())
                 ## Uncomment if you want file ID as well. ##
                 #elif 'X-APPLE-SERVERFILENAME'in line:
                     #self.filename = sql_clean(line[24:])
 
         if self.eend == "Null":
-            self.duration = ("\'"+"AllDay"+"\'")
+            self.duration = "Null"
         else:
-            self.duration = sql_clean(to_date(self.eend) - to_date(self.ebegin))
+            self.duration = self.eend - self.ebegin
+            self.duration = (datetime.datetime.min + self.duration).time()
 
-
-        if len(self.ebegin) < 16: self.allday = 1
-        else: self.allday = 0 # Checks if all day event
+        try:
+            if self.ebegin.hour == 0: self.allday = 1; self.duration = "Null"
+            else: self.allday = 0 # Checks if all day event
+        except:
+            self.allday = "Null"
 
 
 def main():
