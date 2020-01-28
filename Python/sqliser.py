@@ -1,5 +1,4 @@
-
-
+#!/usr/local/bin/python3
 ## Breakdown and import event data into SQL database
 
 import sqlite3
