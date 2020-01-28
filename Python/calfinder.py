@@ -54,9 +54,9 @@ class event:
                 if 'DTEND' in line:
                     self.eend = to_date(line.split(':',1)[1].rstrip())
                 elif 'SUMMARY' in line:
-                    self.ename = line[7:].rstrip()
+                    self.ename = line[8:].rstrip().replace("\\n", ", ").replace("\\", "")
                 elif 'LOCATION' in line:
-                    self.elocation = line[9:].rstrip()
+                    self.elocation = line[9:].rstrip().replace("\\n", ", ").replace("\\", "")
                 elif 'DTSTART' in line:
                     self.ebegin = to_date(line.split(':',1)[1].rstrip())
                 ## Uncomment if you want file ID as well. ##
