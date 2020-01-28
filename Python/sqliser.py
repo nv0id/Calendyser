@@ -3,7 +3,6 @@
 ## Breakdown and import event data into SQL database
 
 import sqlite3
-import readics
 import calfinder
 
 def main():
@@ -15,11 +14,11 @@ def main():
     counter = 0
 
     for calname,path in calendar.calnames.items():
-        calname = readics.sql_clean(calname)
+        calname = calfinder.sql_clean(calname)
         c.execute("CREATE TABLE "+calname+" (fileid text, name text, location text, start text, finish text,duration text)")
 
         for eventpath in calfinder.file_ext_search(path,".ics"):
-            event = readics.event(eventpath)
+            event = calfinder.event(eventpath)
             sql_cmd = "INSERT INTO "+calname+" VALUES (%s, %s, %s, %s, %s, %s)" %(event.filename, event.ename, event.elocation, event.ebegin, event.eend, event.duration)
             counter += 1
             c.execute(sql_cmd)
