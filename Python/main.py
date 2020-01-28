@@ -13,12 +13,19 @@ from math import pi
 import datetime as dt
 import sqlite3
 
+conn = sqlite3.connect('/Users/nvoidmac/Desktop/events.db')
+c = conn.cursor()
 
 def plotter():
     output_file('pie.html')
 
-    conn = sqlite3.connect('/Users/nvoidmac/Desktop/events.db')
+def getdata():
+    c.execute("""SELECT * FROM allevents WHERE AllDayEvent='0' AND WHERE
+    """)
 
+
+
+conn.close()
 
 def main():
     pass
