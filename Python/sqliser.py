@@ -5,8 +5,12 @@
 import sqlite3
 import calfinder
 
-def main():
-    calendar = calfinder.calfinder('Data/Calendar.icbu') # For testing - Put path to .icbu here!
+def sqlise(path):
+    '''
+    Function takes the path to a Calendar.icbu file,
+    finds every every event and puts it into a database.
+    '''
+    calendar = calfinder.calfinder(path)
 
     conn = sqlite3.connect('/Users/nvoidmac/Documents/GitHub/Calendyser/Python/events.db')
     c = conn.cursor()
@@ -14,23 +18,24 @@ def main():
     counter = 0
 
     for calname,path in calendar.calnames.items():
-        calname = calfinder.sql_clean(calname)
-        c.execute("CREATE TABLE "+calname+" (fileid text, name text, location text, start text, finish text,duration text)")
+        calname = calfinder.sql_clean(calname) # Cleaniing up the name to prevent SQL injection.
+        c.execute("CREATE TABLE "+calname+" (fileid text, name text, location text, start text, finish text,duration text)") # Create a table for each Calendar found
+        counter += 1
 
-        for eventpath in calfinder.file_ext_search(path,".ics"):
-            event = calfinder.event(eventpath)
+        for eventpath in calfinder.file_ext_search(path,".ics"): # Searches for .ics files
+            event = calfinder.event(eventpath) # Creates an instance of event.
             sql_cmd = "INSERT INTO "+calname+" VALUES (%s, %s, %s, %s, %s, %s)" %(event.filename, event.ename, event.elocation, event.ebegin, event.eend, event.duration)
             counter += 1
-            c.execute(sql_cmd)
+            c.execute(sql_cmd) # Writes event data to DB
 
 
     conn.commit()
-
     conn.close()
 
-    print ("Inserted "+str(counter)+" events into database!")
+    return ("Made "+str(counter)+" queries!")
 
-
+def main():
+    pass
 
 if __name__ == "__main__":
     main()

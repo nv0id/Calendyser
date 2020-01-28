@@ -1,21 +1,34 @@
 #!/usr/local/bin/python3
-
 # Find path names of all .calendar folders
 
+## ---------- Imports ---------- ##
 
 import glob
 import os
-import dateutil.parser   # For dealing with the YYYYMMDDTHHMMSS datetime format
+import dateutil.parser
+
+## ---------- Defining functions here ---------- ##
 
 def file_ext_search(path,ext):
     return glob.glob(path + '/**/*%s'%ext, recursive=True)
 
 def to_date(datestring):
+    '''
+    - Takes string as input
+    - Tries to turn varable into datestring
+    - Returns datestime string
+    '''
     if datestring=="Null":
         return
-    return dateutil.parser.parse(datestring)
+    try: return dateutil.parser.parse(datestring)
+    except: return "Null"
 
 def sql_clean(string):
+    '''
+    - Takes any variable as input
+    - Turns varable into string and makes it SQL-safe
+    - Returns cleansed 'string'
+    '''
     string = str(string)
     b = "!@: %^<>.,/*()#-;±§£'|][{}+=~`\""
     string = string.replace(" ","_")
@@ -23,6 +36,7 @@ def sql_clean(string):
     for char in b: string=string.replace(char,"")
     return "\'"+string+"\'"
 
+## ---------- Making Classes here ---------- ##
 
 class calfinder:
     def __init__(self,path): # Pass /path_to_.icbu
@@ -67,10 +81,6 @@ class event:
         else:
             self.duration = sql_clean(to_date(self.eend) - to_date(self.ebegin))
 
-
-## Debug - Delete me later ##
-#calendar = calfinder('/Users/nvoidmac/Documents/GitHub/Calendyser/Python/Data/Calendar.icbu')
-#print(calendar.calnames)
 def main():
     pass
 
