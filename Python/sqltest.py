@@ -20,11 +20,11 @@ output_file("pie.html")
 
 db = sqlite3.connect('/Users/nvoidmac/Desktop/events.db')
 
-res = (pd.read_sql_query("SELECT EventName,Duration FROM allevents WHERE AllDayEvent=0 and Calendar='Work' GROUP BY EventName",db))
+res = (pd.read_sql_query("SELECT Calendar,sum(Duration) FROM allevents WHERE AllDayEvent=0 AND Calendar<>'UniversityofBathtimetable-UEME-AFM16-1-MEng(hons)MechanicalEngineering' GROUP BY Calendar",db))
 print (res)
-t = (res['Duration'])
+t = (res['sum(Duration)'])
 print(t)
-x = dict(zip(res['EventName'],t))
+x = dict(zip(res['Calendar'],t))
 print(x)
 
 db.close()
@@ -33,14 +33,7 @@ db.close()
 
 data = pd.Series(x).reset_index(name='value').rename(columns={'index':'country'})
 data['angle'] = data['value']/data['value'].sum() * 2*pi
-colours = []
-for i in range(len(x)):
-    random_number = rand.randint(0,16777215)
-    hex_number = str(hex(random_number))
-    hex_number ='\#'+ hex_number[2:]
-    colours.append(hex_number)
-
-data['color'] = colours
+data['color'] = Category20c[len(x)]
 
 
 
