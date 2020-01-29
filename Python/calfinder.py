@@ -67,7 +67,8 @@ class event:
             self.duration = "Null"
         else:
             self.duration = self.eend - self.ebegin
-            self.duration = (datetime.datetime.min + self.duration).time()
+            self.duration = str((datetime.datetime.min + self.duration).time())
+            self.duration = int(self.duration[0:1]*60+self.duration[3:4]+self.duration[6:7])
 
         try:
             if self.ebegin.hour == 0: self.allday = 1; self.duration = "Null"
