@@ -29,7 +29,7 @@ def sqlise(icbuIn,dbOut):
                 AllDayEvent INTEGER NOT NULL,
                 TStart timestamp,
                 TFinish timestamp,
-                Duration INTEGER)""") # Create a table for each Calendar found
+                Duration REAL)""") # Create a table for each Calendar found
     for calname,path in calendar.calnames.items():
         for eventpath in calfinder.file_ext_search(path,".ics"): # Searches for .ics files in that .calendar folder
 
